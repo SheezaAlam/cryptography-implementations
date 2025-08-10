@@ -1,4 +1,56 @@
 
+# 🔐 AES Password Encryption & Decryption in Python
+
+## 📌 Overview
+
+This project demonstrates **AES-128 encryption** to securely store sensitive information — in this case, a fun example:
+
+```
+IGoToTheGym@7pm
+```
+
+The same method can be applied to **social media passwords, WiFi keys, API tokens,** or any sensitive string you need to keep private.
+
+> Even if an attacker steals the encrypted data, without the **exact key** and **nonce**, it’s useless.
+
+---
+
+## 🚀 Features
+
+* **AES-128 in EAX mode** (Authenticated Encryption)
+* **Secure random key generation**
+* **Base64 encoding** for safe storage/transmission
+* Simple **Python implementation** with `pycryptodome`
+
+---
+
+## 🛠 Installation
+
+```bash
+pip install pycryptodome
+```
+
+---
+
+## 🧠 How It Works
+
+1. **Generate Key** → 16 bytes (128 bits) of secure random data.
+2. **EAX Mode** → Provides both encryption & authentication.
+3. **Encrypt** → Password → Ciphertext + Authentication Tag.
+4. **Decrypt** → Requires **exact** Key + Nonce.
+
+---
+
+
+## 🎯 Future Improvements
+
+* Add **file encryption** (PDF, TXT, Images)
+* Implement **AES-256**
+* Store & retrieve keys from **secure key vaults**
+* Create **CLI tool** for quick encryption tasks
+
+---
+
 ## 📜 Caesar Cipher Tool
 
 A simple **Python-based Caesar Cipher** implementation with **encryption** and **decryption** options.
