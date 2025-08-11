@@ -28,7 +28,15 @@ It’s used in:
 2. **Encrypt** a password using the public key — turning it into unreadable data.
 3. **Decrypt** it using the private key — recovering the original password.
 
----
+**RSA Encryption**
+
+Uses your public key to convert each part of that text into numbers using modular exponentiation.
+The numbers are then represented in bytes, which often look like b'\x93\x1f\xaa...' in Python or long numeric blobs.
+
+**Result:**
+
+The text is no longer human-readable — it’s just random-looking binary data.
+Even if someone gets this “gibberish,” they can’t reverse it without the private key.
 
 ## **Project Steps**
 
