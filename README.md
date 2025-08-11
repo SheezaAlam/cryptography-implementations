@@ -3,9 +3,6 @@
 
 A simple Python implementation of **RSA public-key cryptography** to encrypt and decrypt a password — demonstrated here using an Instagram password example.
 
-This project is part of my **Protocol Developer learning journey**.
-
----
 
 ## **What is RSA?**
 
@@ -58,10 +55,6 @@ Decrypted Password: Instagram@123
 ```
 
 ---
-
-## **Why This Matters for Protocol Developers**
-
-Understanding RSA is a **fundamental skill** in protocol development because:
 
 * It’s part of **handshake processes** in secure communication.
 * It’s used in **digital signatures** for verifying identities.
