@@ -1,4 +1,81 @@
 
+# **RSA Password Encryption & Decryption**
+
+A simple Python implementation of **RSA public-key cryptography** to encrypt and decrypt a password — demonstrated here using an Instagram password example.
+
+This project is part of my **Protocol Developer learning journey**.
+
+---
+
+## **What is RSA?**
+
+RSA (Rivest–Shamir–Adleman) is a widely-used **asymmetric cryptographic algorithm**.
+
+* **Asymmetric** means it uses **two keys**:
+
+  * **Public Key** → Used for **encryption** (like a padlock).
+  * **Private Key** → Used for **decryption** (like the only key to open the padlock).
+
+It’s used in:
+
+* Secure websites (HTTPS)
+* Messaging apps (Signal, WhatsApp)
+* Blockchain and cryptocurrency protocols
+* VPNs & secure communication channels
+
+---
+
+## **How It Works**
+
+1. **Generate** a pair of RSA keys (public and private).
+2. **Encrypt** a password using the public key — turning it into unreadable data.
+3. **Decrypt** it using the private key — recovering the original password.
+
+---
+
+## **Project Steps**
+
+### **1. Install dependencies**
+
+```bash
+pip install pycryptodome
+```
+
+### **2. Run the script**
+
+```bash
+python rsa_password.py
+```
+
+---
+
+## **Example**
+
+```python
+Original Password: Instagram@123
+Encrypted Password: b'\x83\x19... (binary gibberish) ...'
+Decrypted Password: Instagram@123
+```
+
+---
+
+## **Why This Matters for Protocol Developers**
+
+Understanding RSA is a **fundamental skill** in protocol development because:
+
+* It’s part of **handshake processes** in secure communication.
+* It’s used in **digital signatures** for verifying identities.
+* It’s the backbone for **end-to-end encryption** in modern systems.
+
+---
+
+## **Next Steps**
+
+* Implement RSA with **key files** for a real-world approach.
+* Combine with **AES** to build hybrid encryption.
+* Apply it to encrypt messages between two clients.
+
+
 # 🔐 AES Password Encryption & Decryption in Python
 
 ## 📌 Overview
