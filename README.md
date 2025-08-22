@@ -1,3 +1,69 @@
+ **Hill Cipher repo**.
+
+#  Hill Cipher in Python
+
+A simple implementation of the **Hill Cipher** — a classical encryption technique based on linear algebra.
+
+##  Overview
+The Hill Cipher is a polygraphic substitution cipher that uses matrix multiplication to encrypt blocks of text.  
+This repo demonstrates:
+- Converting text into numbers
+- Applying matrix multiplication with a key
+- Handling padding
+- Flattening encrypted output
+- (Optional) Decryption back to plaintext
+
+## Features
+- Encrypts plaintext using a 2x2 key matrix
+- Supports padding for odd-length text
+- Easy-to-understand code for learning classical cryptography
+
+## **Requirements**
+- Python 3.x  
+- NumPy
+
+Install requirements:
+```bash
+pip install numpy
+
+## **Usage**
+
+Run the program:
+
+```bash
+python hill_cipher.py
+```
+
+Example:
+
+```
+Plaintext : HELLO
+Ciphertext: TFJJZ
+```
+
+##  Project Structure
+
+```
+hill-cipher/
+│── hill_cipher.py   # Main code
+│── README.md        # Documentation
+```
+
+##  Example Key
+
+The program uses a **2x2 key matrix** for encryption:
+
+```
+[[3, 3],
+ [2, 5]]
+```
+
+##  References
+
+* Classical Cryptography
+* Linear Algebra & Modular Arithmetic
+
+
 
 # **RSA Password Encryption & Decryption**
 
