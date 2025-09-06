@@ -24,9 +24,9 @@ Algorithms included:
 
 Use this repository to **learn**, **experiment**, or **adapt** for small-scale projects.
 
-## Repository Structure
 
-```
+
+## Repository Structure
 
 cryptography-python/
 │
@@ -46,11 +46,10 @@ cryptography-python/
 │   ├── aes\_password.py
 │   └── README.md
 │
-└── main\_README.md   # This document
+└── main\_README.md
 
 
-
-## Algorithms Explained
+**Algorithms Explained**
 
 ### 1. Hill Cipher
 - **What**: A **polygraphic substitution cipher** that encrypts blocks of letters using **matrix multiplication** and modular arithmetic.
@@ -99,7 +98,6 @@ cryptography-python/
 
 > AES is far stronger than classical ciphers and forms the core of many secure systems, including disk encryption, encrypted messaging, and cloud storage.
 
----
 
 ## Getting Started
 
