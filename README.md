@@ -1,293 +1,170 @@
- **Hill Cipher repo**.
 
-#  Hill Cipher in Python
+# Classical & Modern Cryptography in Python
 
-A simple implementation of the **Hill Cipher** — a classical encryption technique based on linear algebra.
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Build Status](https://img.shields.io/badge/Status-Active-success.svg)]()
+[![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen.svg)]()
 
-##  Overview
-The Hill Cipher is a polygraphic substitution cipher that uses matrix multiplication to encrypt blocks of text.  
-This repo demonstrates:
-- Converting text into numbers
-- Applying matrix multiplication with a key
-- Handling padding
-- Flattening encrypted output
-- (Optional) Decryption back to plaintext
+A hands-on collection of Python implementations for **classical** and **modern** cryptographic algorithms.  
+Each project is written with clarity for learners while preserving accurate, working code.
 
-## Features
-- Encrypts plaintext using a 2x2 key matrix
-- Supports padding for odd-length text
-- Easy-to-understand code for learning classical cryptography
 
-## **Requirements**
-- Python 3.x  
-- NumPy
+## Why This Repository?
 
-Install requirements:
+Cryptography is at the core of secure systems — from protecting passwords to enabling secure communication across the internet.  
+This repository demonstrates **how common algorithms work** and **why they matter** by implementing them step by step in Python.
+
+Algorithms included:
+
+- **Hill Cipher** — classical, matrix-based substitution
+- **Caesar Cipher** — classical, simple shift cipher
+- **RSA** — modern, asymmetric encryption
+- **AES** — modern, symmetric encryption
+
+Use this repository to **learn**, **experiment**, or **adapt** for small-scale projects.
+
+## Repository Structure
+
+```
+
+cryptography-python/
+│
+├── hill\_cipher/
+│   ├── hill\_cipher.py
+│   └── README.md
+│
+├── caesar\_cipher/
+│   ├── caesar\_cipher.py
+│   └── README.md
+│
+├── rsa\_password/
+│   ├── rsa\_password.py
+│   └── README.md
+│
+├── aes\_password/
+│   ├── aes\_password.py
+│   └── README.md
+│
+└── main\_README.md   # This document
+
+
+
+## Algorithms Explained
+
+### 1. Hill Cipher
+- **What**: A **polygraphic substitution cipher** that encrypts blocks of letters using **matrix multiplication** and modular arithmetic.
+- **Why**: Shows how **linear algebra** can be applied to cryptography; historically important in early 20th-century ciphers.
+- **Key Points**:
+  - Works on **pairs** or **triplets** of letters.
+  - Requires an **invertible matrix** as the encryption key.
+  - Decryption uses the **inverse matrix modulo 26**.
+
+> Example: Encrypting “HELLO” with  
+> key `[[3,3],[2,5]]` produces ciphertext such as `TFJJZ`.
+
+
+### 2. Caesar Cipher
+- **What**: A **monoalphabetic cipher** that shifts letters by a fixed number in the alphabet.
+- **Why**: One of the earliest and simplest ciphers; useful for **introducing substitution** and modular arithmetic concepts.
+- **Key Points**:
+  - Fixed shift (often 3).
+  - Easy to break but perfect for **demonstration**.
+  - Basis for understanding **frequency analysis**.
+
+---
+
+### 3. RSA (Public-Key Cryptography)
+- **What**: A modern **asymmetric algorithm** using **two keys**:
+  - **Public Key** for encryption
+  - **Private Key** for decryption
+- **Why**: RSA secures data over insecure channels without exchanging a shared secret; fundamental to HTTPS, digital signatures, and more.
+- **Key Points**:
+  - Relies on the difficulty of factoring **large prime numbers**.
+  - Forms the backbone of **secure key exchange** on the web.
+  - Encrypts sensitive strings (like passwords) safely.
+
+> Example: Encrypting `Instagram@123` produces unreadable bytes.  
+> Only the holder of the **private key** can recover the original password.
+
+---
+
+### 4. AES (Advanced Encryption Standard)
+- **What**: A **symmetric** block cipher that encrypts data using the **same key** for encryption and decryption.
+- **Why**: AES is the **industry standard** for securing sensitive data (banking, Wi-Fi, VPNs, file storage).
+- **Key Points**:
+  - Implements **AES-128** here (128-bit keys).
+  - Uses **EAX mode** for authenticated encryption.
+  - Protects against tampering and ensures confidentiality.
+
+> AES is far stronger than classical ciphers and forms the core of many secure systems, including disk encryption, encrypted messaging, and cloud storage.
+
+---
+
+## Getting Started
+
+### Installation
 ```bash
-pip install numpy
+git clone https://github.com/yourusername/cryptography-python.git
+cd cryptography-python
+pip install -r requirements.txt
+````
 
-## **Usage**
-
-Run the program:
+If requirements are separate per project:
 
 ```bash
+pip install numpy pycryptodome
+```
+
+### Running an Algorithm
+
+```bash
+cd hill_cipher
 python hill_cipher.py
 ```
 
-Example:
+---
+
+## Example: Hill Cipher
 
 ```
 Plaintext : HELLO
 Ciphertext: TFJJZ
 ```
 
-##  Project Structure
+---
 
-```
-hill-cipher/
-│── hill_cipher.py   # Main code
-│── README.md        # Documentation
-```
+## Educational Focus
 
-##  Example Key
-
-The program uses a **2x2 key matrix** for encryption:
-
-```
-[[3, 3],
- [2, 5]]
-```
-
-##  References
-
-* Classical Cryptography
-* Linear Algebra & Modular Arithmetic
-
-
-
-# **RSA Password Encryption & Decryption**
-
-A simple Python implementation of **RSA public-key cryptography** to encrypt and decrypt a password — demonstrated here using an Instagram password example.
-
-
-## **What is RSA?**
-
-RSA (Rivest–Shamir–Adleman) is a widely-used **asymmetric cryptographic algorithm**.
-
-* **Asymmetric** means it uses **two keys**:
-
-  * **Public Key** → Used for **encryption** (like a padlock).
-  * **Private Key** → Used for **decryption** (like the only key to open the padlock).
-
-It’s used in:
-
-* Secure websites (HTTPS)
-* Messaging apps (Signal, WhatsApp)
-* Blockchain and cryptocurrency protocols
-* VPNs & secure communication channels
+* Demonstrates **core principles** behind both classical and modern cryptography.
+* Written to be **clear, documented, and modifiable**.
+* Suitable for **students**, **security beginners**, and anyone curious about **how ciphers work**.
 
 ---
 
-## **How It Works**
+## Roadmap
 
-1. **Generate** a pair of RSA keys (public and private).
-2. **Encrypt** a password using the public key — turning it into unreadable data.
-3. **Decrypt** it using the private key — recovering the original password.
+* [ ] Implement **AES-256**
+* [ ] Add **hybrid RSA-AES** demonstration
+* [ ] Provide **unit tests** for each algorithm
+* [ ] Expand into **hashing** (SHA-256, SHA-3)
 
-**RSA Encryption**
+---
 
-Uses your public key to convert each part of that text into numbers using modular exponentiation.
-The numbers are then represented in bytes, which often look like b'\x93\x1f\xaa...' in Python or long numeric blobs.
+## License
 
-**Result:**
+MIT License — free for personal, academic, or commercial use.
 
-The text is no longer human-readable — it’s just random-looking binary data.
-Even if someone gets this “gibberish,” they can’t reverse it without the private key.
+---
 
-## **Project Steps**
+## References
 
-### **1. Install dependencies**
+* Bruce Schneier, *Applied Cryptography*
+* William Stallings, *Cryptography and Network Security*
+* [NIST AES Standard](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf)
 
-```bash
-pip install pycryptodome
-```
-
-### **2. Run the script**
-
-```bash
-python rsa_password.py
 ```
 
 ---
 
-## **Example**
-
-```python
-Original Password: Instagram@123
-Encrypted Password: b'\x83\x19... (binary gibberish) ...'
-Decrypted Password: Instagram@123
-```
-
----
-
-* It’s part of **handshake processes** in secure communication.
-* It’s used in **digital signatures** for verifying identities.
-* It’s the backbone for **end-to-end encryption** in modern systems.
-
----
-
-## **Next Steps**
-
-* Implement RSA with **key files** for a real-world approach.
-* Combine with **AES** to build hybrid encryption.
-* Apply it to encrypt messages between two clients.
-
-
-# 🔐 AES Password Encryption & Decryption in Python
-
-## 📌 Overview
-
-This project demonstrates **AES-128 encryption** to securely store sensitive information — in this case, a fun example:
-
-```
-IGoToTheGym@7pm
-```
-
-The same method can be applied to **social media passwords, WiFi keys, API tokens,** or any sensitive string you need to keep private.
-
-> Even if an attacker steals the encrypted data, without the **exact key** and **nonce**, it’s useless.
-
----
-
-## 🚀 Features
-
-* **AES-128 in EAX mode** (Authenticated Encryption)
-* **Secure random key generation**
-* **Base64 encoding** for safe storage/transmission
-* Simple **Python implementation** with `pycryptodome`
-
----
-
-## 🛠 Installation
-
-```bash
-pip install pycryptodome
-```
-
----
-
-## 🧠 How It Works
-
-1. **Generate Key** → 16 bytes (128 bits) of secure random data.
-2. **EAX Mode** → Provides both encryption & authentication.
-3. **Encrypt** → Password → Ciphertext + Authentication Tag.
-4. **Decrypt** → Requires **exact** Key + Nonce.
-
----
-
-
-## 🎯 Future Improvements
-
-* Add **file encryption** (PDF, TXT, Images)
-* Implement **AES-256**
-* Store & retrieve keys from **secure key vaults**
-* Create **CLI tool** for quick encryption tasks
-
----
-
-## 📜 Caesar Cipher Tool
-
-A simple **Python-based Caesar Cipher** implementation with **encryption** and **decryption** options.
-Uses a fixed **key of 3** and wraps around the alphabet (A–Z, a–z).
-Perfect for learning basic cryptography concepts.
-
----
-
-### ✨ Features
-
-* **Encrypt & Decrypt** messages with ease
-* Fixed shift key: **3**
-* Handles **uppercase** and **lowercase** letters
-* Preserves spaces, numbers, and punctuation
-* Wraps around alphabet automatically (Z → C)
-
----
-
-### 📂 Project Structure
-
-```
-caesar_cipher.py   # Main Python script
-README.md          # Documentation
-```
-
----
-
-### 🚀 How to Run
-
-#### 1️⃣ Clone or Download
-
-Download the file or clone the repository:
-
-```bash
-git clone https://github.com/yourusername/caesar-cipher.git
-cd caesar-cipher
-```
-
-#### 2️⃣ Run the script
-
-```bash
-python caesar_cipher.py
-```
-
-If `python` doesn’t work, use:
-
-```bash
-python3 caesar_cipher.py
-```
-
----
-
-### 🖥 Example Run
-
-```
-=================================
-       Caesar Cipher Tool        
-=================================
-Choose an option:
-1. Encrypt a message
-2. Decrypt a message
-Enter 1 or 2: 1
-Enter your message: HELLO WORLD
-
-Result:
-KHOOR ZRUOG
-```
-
----
-
-### 📖 How It Works
-
-The Caesar Cipher shifts each letter by a fixed number (**key**) through the alphabet.
-
-```python
-shifted = (ord(char) - base + key) % 26
-```
-
-* `ord(char)` → Get ASCII code of the character
-* `base` → ASCII code of 'A' or 'a' (depending on case)
-* Subtract `base` to get **0–25 position** in alphabet
-* Add `key` to shift
-* `% 26` ensures wrap-around (e.g., Z → C)
-
----
-
-### 🛠 Requirements
-
-* Python **3.x** installed
-
----
-
-### 📜 License
-
-This project is open-source under the **MIT License**.
 
