@@ -161,8 +161,10 @@ MIT License — free for personal, academic, or commercial use.
 * William Stallings, *Cryptography and Network Security*
 * [NIST AES Standard](https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.197.pdf)
 
-```
 
----
+## Contributing
+
+Contributions, bug reports, and feature requests are welcome.
+Fork the repository and open a pull request with clear commit messages.
 
 
